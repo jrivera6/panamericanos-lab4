@@ -22,7 +22,7 @@
           </div>
       
           <!-- Login Form -->
-          <form method="POST" action="">
+          <form method="POST" action="login.php">
             <input type="text" id="login" class="fadeIn second" name="txt_usuario" placeholder="Usuario">
             <input type="password" id="password" class="fadeIn third" name="txt_contraseña" placeholder="Contraseña">
             <input type="submit" class="fadeIn fourth" value="Ingresar">
