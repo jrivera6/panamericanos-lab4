@@ -13,8 +13,8 @@
     
     if($row["password"] == $pass){
 
-        // echo "Logeado correctamente";
-        header('Location: adminpage.html');
+        echo "Logeado correctamente";
+        // header('Location: adminpage.html');
 
     }else{
 
