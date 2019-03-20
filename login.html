@@ -1,29 +1,3 @@
-<?php
-    include "db.php";
-
-    echo "console.log('antes de la conexion')";
-    $db = mysqli_connect($server,$user,$password,$database);
-
-    $user = $_POST["txt_usuario"];
-    $pass = $_POST["txt_contraseña"];
-    $result = mysqli_query($db,"SELECT * FROM usuarios WHERE username = '$user'");   
-    $row = mysqli_fetch_array($result);
-    
-    
-    
-    if($row["password"] == $pass){
-
-        echo "Logeado correctamente";
-        // header('Location: adminpage.html');
-
-    }else{
-
-        echo "Error";
-
-    }
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -45,7 +19,7 @@
             <img src="img/logo_login.png" id="icon" alt="Juegos Panamericanos 2019" />
           </div>
       
-          <form method="POST" action="">
+          <form method="POST" action="login_val.php">
             <input type="text" id="login" class="fadeIn second" name="txt_usuario" placeholder="Usuario">
             <input type="password" id="password" class="fadeIn third" name="txt_contraseña" placeholder="Contraseña">
             <input type="submit" class="fadeIn fourth" value="Ingresar">
