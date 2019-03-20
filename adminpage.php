@@ -214,10 +214,10 @@
                                 <table class="table table-bordered table-striped">
                                     <thead class="thead-dark">
                                       <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Deporte</th>
+                                        <th scope="col">Descripción</th>
+                                        <th scope="col">Historia</th>
                                       </tr>
                                     </thead>
                                     <tbody>
