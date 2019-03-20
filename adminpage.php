@@ -225,8 +225,8 @@
                                       <tr>
                                         <th scope="row"><?php echo $f["id"]; ?></th>
                                         <td> <?php echo $f["nombre"]; ?> </td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
+                                        <td> <?php echo $f["descripcion"]; ?> </td>
+                                        <td> <?php echo $f["historia"]; ?> </td>
                                       </tr>
                                         <?php } ?>
                                     </tbody>
