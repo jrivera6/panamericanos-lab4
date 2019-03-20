@@ -1,7 +1,5 @@
 <?php
     include "db.php";
-
-    echo "console.log('antes de la conexion')";
     $db = mysqli_connect($server,$user,$password,$database);
 
     $user = $_POST["txt_usuario"];
@@ -14,7 +12,7 @@
     if($row["password"] == $pass){
 
         // echo "Logeado correctamente";
-        header('Location: adminpage.html');
+        header('Location: adminpage.php');
 
     }else{
 

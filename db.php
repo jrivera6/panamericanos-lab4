@@ -4,6 +4,4 @@
     $password= "a5dd608f";
     $database= "heroku_bbd8ec1aa59ef46";
 
-
-
 ?>
