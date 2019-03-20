@@ -226,7 +226,7 @@
                                         <?php foreach($res as $f): ?>
                                       <tr>
                                         <th scope="row"><?php echo $f["id"]; ?></th>
-                                        <td></td>
+                                        <td> <?php echo $f["nombre"]; ?> </td>
                                         <td>Otto</td>
                                         <td>@mdo</td>
                                       </tr>
