@@ -11,7 +11,7 @@
 </head>
 <body>
     
-   <a href="login.php">Login</a>
+   <a href="login.html">Login</a>
 
 </body>
 </html>
