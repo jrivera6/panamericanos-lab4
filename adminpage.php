@@ -4,7 +4,7 @@
     $db = mysqli_connect($server,$user,$password,$database);
 
     $result = mysqli_query($db, "SELECT * FROM deportes ORDER BY id ASC");
-    $res = mysqli_fetch_array($result);
+    $res = mysqli_fetch_assoc($result);
 
 
 
