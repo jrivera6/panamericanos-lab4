@@ -1,7 +1,7 @@
 <?php
     include "db.php";
 
-    $db = mysqli_connect($server, $user, $password, $database);
+    $db = mysqli_connect($server,$user,$password,$database);
 
     $user = $_POST["txt_usuarios"];
     $pass = $_POST["txt_contraseña"];
