@@ -4,9 +4,7 @@
     $db = mysqli_connect($server,$user,$password,$database);
 
     $result = mysqli_query($db, "SELECT * FROM deportes ORDER BY id ASC");
-    $res = mysqli_fetch_assoc($result);
-
-
+    // $res = mysqli_fetch_assoc($result);
 
 ?>
 
@@ -223,14 +221,14 @@
                                       </tr>
                                     </thead>
                                     <tbody>
-                                        <?php foreach($res as $f): ?>
+                                        <?php while($f = mysqli_fetch_assoc($result)){ ?>
                                       <tr>
                                         <th scope="row"><?php echo $f["id"]; ?></th>
                                         <td> <?php echo $f["nombre"]; ?> </td>
                                         <td>Otto</td>
                                         <td>@mdo</td>
                                       </tr>
-                                      <?php endforeach ?>
+                                        <?php } ?>
                                     </tbody>
                                   </table>
                                   
