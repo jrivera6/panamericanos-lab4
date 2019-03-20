@@ -14,7 +14,7 @@
 
     $row = mysqli_fetch_array($result);
 
-    echo "console.log('row: '.$ro)";
+    echo "console.log('row: '.$row)";
     if($row["password"] == $pass){
 
         echo "Logeado correctamente";
