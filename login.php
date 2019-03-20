@@ -11,8 +11,9 @@
 
     echo "console.log('contraseña: '.$pass)";
     
-    echo "result: ".$result;
+    
     $row = mysqli_fetch_array($result);
+    echo "result: ".$row;
 
     if($row["password"] == $pass){
 
