@@ -10,13 +10,27 @@ $db = mysqli_connect($server,$user,$password,$database);
         
         $res = mysqli_query($db, $delete);
 
-
-        
-
     }else{
         header('Location: adminpage.php');
     }
 
+
+    if(isset($_POST["guardar"])){
+        $nom_deporte  = $_POST["txt_newdeporte"];
+        $desc = $_POST["txt_newdescripcion"];
+        $hist = $_POST["txt_newhistoria"];
+
+
+        $insert = "UPDATE deportes SET nombre = '$txt_newdeporte', descripcion = '$txt_newdescripcion,
+        historia ='$txt_newhistoria' WHERE id='$id'";
+
+
+        if(mysqli_query($db,$insert)) {
+
+            header('Location: adminpage.php');
+        }   
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -198,7 +212,7 @@ $db = mysqli_connect($server,$user,$password,$database);
                                     </div>
                                     
                                 </div>
-                                <form method="POST" action="">
+                                <form method="POST" action="update_val.php">
                                     <?php while($f = mysqli_fetch_assoc($res)){?>
                                     <div class="form-group">
                                         <label for="txt_newdeporte">Deporte</label>
@@ -213,7 +227,7 @@ $db = mysqli_connect($server,$user,$password,$database);
                                         <textarea class="form-control" name="txt_newhistoria" id="txt_newhistoria" rows="3" ><?php echo $f['historia']; ?></textarea>
                                     </div>
                                     <?php }?>
-                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                    <button type="submit" name="guardar" class="btn btn-primary">Guardar</button>
                                 </form>
                                   
                                 <div class="row">
