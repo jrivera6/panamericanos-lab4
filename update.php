@@ -206,11 +206,11 @@ $db = mysqli_connect($server,$user,$password,$database);
                                     </div>
                                     <div class="form-group">
                                         <label for="txt_newdescripcion">Descripción</label>
-                                        <textarea class="form-control" name="txt_newdescripcion" id="txt_newdescripcion" rows="3" value="<?php echo $f['descripcion']; ?>"></textarea>
+                                        <textarea class="form-control" name="txt_newdescripcion" id="txt_newdescripcion" rows="3" ><?php echo $f['descripcion']; ?></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="txt_newhistoria">Historia</label>
-                                        <textarea class="form-control" name="txt_newhistoria" id="txt_newhistoria" rows="3" value="<?php echo $f['historia']; ?>"></textarea>
+                                        <textarea class="form-control" name="txt_newhistoria" id="txt_newhistoria" rows="3" ><?php echo $f['historia']; ?></textarea>
                                     </div>
                                     <?php }?>
                                     <button type="submit" class="btn btn-primary">Guardar</button>
