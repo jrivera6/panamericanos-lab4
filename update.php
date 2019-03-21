@@ -6,7 +6,7 @@ $db = mysqli_connect($server,$user,$password,$database);
 
     if(isset($_GET["id"])){
         $id=(int) $_GET['id'];
-        $delete= "SELECT * deportes WHERE id='$id'";
+        $delete= "SELECT * FROM deportes WHERE id='$id'";
         
         $res = mysqli_query($db, $delete);
 
@@ -20,7 +20,7 @@ $db = mysqli_connect($server,$user,$password,$database);
 ?>
 
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
