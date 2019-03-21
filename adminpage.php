@@ -185,7 +185,7 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-5">
-                        <h4 class="page-title">Dashboard</h4>
+                        <h4 class="page-title">Deportes</h4>
                     </div>
                 </div>
             </div>
@@ -205,8 +205,8 @@
                             <div class="card-body">
                                 <div class="d-md-flex align-items-center">
                                     <div>
-                                        <h4 class="card-title">Sales Summary</h4>
-                                        <h5 class="card-subtitle">Overview of Latest Month</h5>
+                                        <h4 class="card-title">Lista de deportes</h4>
+                                        
                                     </div>
                                     
                                 </div>
