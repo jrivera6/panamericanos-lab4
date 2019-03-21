@@ -15,7 +15,7 @@
 
     $result = $db->query($insert);
 
-    if($result === TRUE) {
+    if(mysqli_query($db,$insert)) {
 
         echo "Creado correctamente";
     } else {
