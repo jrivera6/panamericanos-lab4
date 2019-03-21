@@ -198,8 +198,8 @@ $db = mysqli_connect($server,$user,$password,$database);
                                     </div>
                                     
                                 </div>
-                                <form method="POST" action="create.php">
-                                    <?php while($f = mysqli_fetch_assoc($rs)){?>
+                                <form method="POST" action="">
+                                    <?php while($f = mysqli_fetch_assoc($res)){?>
                                     <div class="form-group">
                                         <label for="txt_newdeporte">Deporte</label>
                                         <input type="text" class="form-control" name="txt_newdeporte" id="txt_newdeporte" value="<?php echo $f['nombre'] ?>">
