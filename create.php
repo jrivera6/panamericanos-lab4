@@ -13,8 +13,6 @@
     VALUES ('$nom_deporte', '$desc', '$hist')";
 
 
-    $result = $db->query($insert);
-
     if(mysqli_query($db,$insert)) {
 
         echo "Creado correctamente";
