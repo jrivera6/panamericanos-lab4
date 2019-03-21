@@ -15,7 +15,7 @@
 
     if(mysqli_query($db,$insert)) {
 
-        echo "Creado correctamente";
+        header("Refresh:0");
     } else {
         
     }   
