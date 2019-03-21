@@ -8,8 +8,10 @@
     $desc = $_POST["txt_newdescripcion"];
     $hist = $_POST["txt_newhistoria"];
 
+    
     $insert = "INSERT INTO deportes (nombre, descripcion, historia)
     VALUES ('$nom_deporte', '$desc', '$hist')";
+
 
     $result = $db->query($insert);
 
