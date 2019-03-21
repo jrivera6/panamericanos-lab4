@@ -227,7 +227,7 @@ $db = mysqli_connect($server,$user,$password,$database);
                                         <textarea class="form-control" name="txt_newhistoria" id="txt_newhistoria" rows="3" ><?php echo $f['historia']; ?></textarea>
                                     </div>
                                     <?php }?>
-                                    <button type="submit" name="guardar" class="btn btn-primary">Guardar</button>
+                                    <input type="submit" name="guardar" class="btn btn-primary" value="Guardar">
                                 </form>
                                   
                                 <div class="row">
