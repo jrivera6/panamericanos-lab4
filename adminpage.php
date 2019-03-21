@@ -217,6 +217,8 @@
                                         <th scope="col">Deporte</th>
                                         <th scope="col">Descripción</th>
                                         <th scope="col">Historia</th>
+                                        <th scope="col">Editar</th>
+                                        <th scope="col">Eliminar</th>
                                       </tr>
                                     </thead>
                                     <tbody>
@@ -226,6 +228,8 @@
                                         <td> <?php echo $f["nombre"]; ?> </td>
                                         <td> <?php echo $f["descripcion"]; ?> </td>
                                         <td> <?php echo $f["historia"]; ?> </td>
+                                        <td> <a href="update.php?id=<?php echo $fila['id']; ?>" class="btn btn-succes">Editar</a> </td>
+                                        <td> <a href="delete.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a> </td>
                                       </tr>
                                         <?php } ?>
                                     </tbody>
