@@ -1,16 +1,26 @@
 <?php
 
-    include "db.php";
-    $db = mysqli_connect($server,$user,$password,$database);
+include "db.php";
 
-    $result = mysqli_query($db, "SELECT * FROM deportes ORDER BY id ASC");
-    // $res = mysqli_fetch_assoc($result);
+$db = mysqli_connect($server,$user,$password,$database);
+
+    if(isset($_GET["id"])){
+        $id=(int) $_GET['id'];
+        $delete= "SELECT * deportes WHERE id='$id'";
+        
+        $res = mysqli_query($db, $delete);
+
+
+        
+
+    }else{
+        header('Location: adminpage.php');
+    }
 
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html dir="ltr" lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -26,12 +36,7 @@
     <link href="../../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/style.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+   
 </head>
 
 <body>
@@ -66,32 +71,15 @@
                             <!-- Light Logo icon -->
                             <img src="img/logo_login.png" width="100px" alt="homepage" class="light-logo" />
                         </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text -->
-                        <!-- <span class="logo-text"> -->
-                             <!-- dark Logo text -->
-                             <!-- <img src="../../assets/images/logo-text.png" alt="homepage" class="dark-logo" /> -->
-                             <!-- Light Logo text -->    
-                             <!-- <img src="../../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /> -->
-                        <!-- </span> -->
+                        
                     </a>
-                    <!-- ============================================================== -->
-                    <!-- End Logo -->
-                    <!-- ============================================================== -->
-                    <!-- This is for the sidebar toggle which is visible on mobile only -->
-                    <!-- <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a> -->
+                    
                 </div>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
+ 
                 <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-                    <!-- ============================================================== -->
-                    <!-- toggle and nav items -->
-                    <!-- ============================================================== -->
+                    
                     <ul class="navbar-nav float-left mr-auto">
-                        <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
+             
                         <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
                             <form class="app-search position-absolute">
                                 <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
@@ -185,7 +173,7 @@
             <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-5">
-                        <h4 class="page-title">Deportes</h4>
+                        <h4 class="page-title">Editar deporte</h4>
                     </div>
                 </div>
             </div>
@@ -205,35 +193,28 @@
                             <div class="card-body">
                                 <div class="d-md-flex align-items-center">
                                     <div>
-                                        <h4 class="card-title">Lista de deportes</h4>
+                                        <h4 class="card-title">Deporte</h4>
                                         
                                     </div>
                                     
                                 </div>
-                                <table class="table table-bordered table-striped">
-                                    <thead class="thead-dark">
-                                      <tr>
-                                        <th scope="col">Id</th>
-                                        <th scope="col">Deporte</th>
-                                        <th scope="col">Descripción</th>
-                                        <th scope="col">Historia</th>
-                                        <th scope="col">Editar</th>
-                                        <th scope="col">Eliminar</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php while($f = mysqli_fetch_assoc($result)){ ?>
-                                      <tr>
-                                        <th scope="row"><?php echo $f["id"]; ?></th>
-                                        <td> <?php echo $f["nombre"]; ?> </td>
-                                        <td> <?php echo $f["descripcion"]; ?> </td>
-                                        <td> <?php echo $f["historia"]; ?> </td>
-                                        <td><a href="update.php?id=<?php echo $f['id']; ?>" class="btn btn-succes">Editar</a></td>
-                                        <td><a href="delete.php?id=<?php echo $f['id']; ?>" class="btn__delete">Eliminar</a></td>
-                                      </tr>
-                                        <?php } ?>
-                                    </tbody>
-                                  </table>
+                                <form method="POST" action="create.php">
+                                    <?php while($f = mysqli_fetch_assoc($rs)){?>
+                                    <div class="form-group">
+                                        <label for="txt_newdeporte">Deporte</label>
+                                        <input type="text" class="form-control" name="txt_newdeporte" id="txt_newdeporte" value="<?php echo $f['nombre'] ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txt_newdescripcion">Descripción</label>
+                                        <textarea class="form-control" name="txt_newdescripcion" id="txt_newdescripcion" rows="3" value="<?php echo $f['descripcion'] ?>"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txt_newhistoria">Historia</label>
+                                        <textarea class="form-control" name="txt_newhistoria" id="txt_newhistoria" rows="3" value="<?php echo $f['historia'] ?>"></textarea>
+                                    </div>
+                                    <?php }?>
+                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                </form>
                                   
                                 <div class="row">
                                     <!-- column -->
