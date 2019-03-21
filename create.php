@@ -15,7 +15,7 @@
 
     if(mysqli_query($db,$insert)) {
 
-        header("Refresh:0");
+        header("Refresh:0, url=admincreate.html");
     } else {
         
     }   
