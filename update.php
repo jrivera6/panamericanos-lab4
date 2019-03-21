@@ -202,15 +202,15 @@ $db = mysqli_connect($server,$user,$password,$database);
                                     <?php while($f = mysqli_fetch_assoc($res)){?>
                                     <div class="form-group">
                                         <label for="txt_newdeporte">Deporte</label>
-                                        <input type="text" class="form-control" name="txt_newdeporte" id="txt_newdeporte" value="<?php echo $f['nombre'] ?>">
+                                        <input type="text" class="form-control" name="txt_newdeporte" id="txt_newdeporte" value="<?php echo $f['nombre']; ?>">
                                     </div>
                                     <div class="form-group">
                                         <label for="txt_newdescripcion">Descripción</label>
-                                        <textarea class="form-control" name="txt_newdescripcion" id="txt_newdescripcion" rows="3" value="<?php echo $f['descripcion'] ?>"></textarea>
+                                        <textarea class="form-control" name="txt_newdescripcion" id="txt_newdescripcion" rows="3" value="<?php echo $f['descripcion']; ?>"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="txt_newhistoria">Historia</label>
-                                        <textarea class="form-control" name="txt_newhistoria" id="txt_newhistoria" rows="3" value="<?php echo $f['historia'] ?>"></textarea>
+                                        <textarea class="form-control" name="txt_newhistoria" id="txt_newhistoria" rows="3" value="<?php echo $f['historia']; ?>"></textarea>
                                     </div>
                                     <?php }?>
                                     <button type="submit" class="btn btn-primary">Guardar</button>
