@@ -228,8 +228,8 @@
                                         <td> <?php echo $f["nombre"]; ?> </td>
                                         <td> <?php echo $f["descripcion"]; ?> </td>
                                         <td> <?php echo $f["historia"]; ?> </td>
-                                        <td> <a href="update.php?id=<?php echo $fila['id']; ?>" class="btn btn-succes">Editar</a> </td>
-                                        <td> <a href="delete.php?id=<?php echo $fila['id']; ?>" class="btn__delete">Eliminar</a> </td>
+                                        <td><a href="update.php?id=<?php echo $f['id']; ?>" class="btn btn-succes">Editar</a></td>
+                                        <td><a href="delete.php?id=<?php echo $f['id']; ?>" class="btn__delete">Eliminar</a></td>
                                       </tr>
                                         <?php } ?>
                                     </tbody>
