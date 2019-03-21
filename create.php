@@ -17,7 +17,7 @@
 
     if($result === TRUE) {
 
-        
+        header("Refresh:0");
     } else {
         
     }   
