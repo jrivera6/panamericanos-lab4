@@ -1,14 +1,3 @@
-<?php
-
-    include "db.php";
-    $db = mysqli_connect($server,$user,$password,$database);
-
-    $result = mysqli_query($db, "SELECT * FROM deportes ORDER BY id ASC");
-    // $res = mysqli_fetch_assoc($result);
-
-?>
-
-
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -210,26 +199,20 @@
                                     </div>
                                     
                                 </div>
-                                <table class="table table-bordered table-striped">
-                                    <thead class="thead-dark">
-                                      <tr>
-                                        <th scope="col">Id</th>
-                                        <th scope="col">Deporte</th>
-                                        <th scope="col">Descripción</th>
-                                        <th scope="col">Historia</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php while($f = mysqli_fetch_assoc($result)){ ?>
-                                      <tr>
-                                        <th scope="row"><?php echo $f["id"]; ?></th>
-                                        <td> <?php echo $f["nombre"]; ?> </td>
-                                        <td> <?php echo $f["descripcion"]; ?> </td>
-                                        <td> <?php echo $f["historia"]; ?> </td>
-                                      </tr>
-                                        <?php } ?>
-                                    </tbody>
-                                  </table>
+                                <form method="POST" action="create.php">
+                                    <div class="form-group">
+                                        <label for="txt_newdeporte">Deporte</label>
+                                        <input type="text" class="form-control" id="txt_newdeporte" placeholder="Atletismo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txt_newdescripcion">Descripción</label>
+                                        <textarea class="form-control" id="txt_newdescripcion" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txt_newhistoria">Historia</label>
+                                        <textarea class="form-control" id="txt_newhistoria" rows="3"></textarea>
+                                    </div>
+                                </form>
                                   
                                 <div class="row">
                                     <!-- column -->
